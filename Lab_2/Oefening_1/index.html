@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Demo</title>
+</head>
+<body>
+
+<script>
+    // Alert popup
+    alert("Dit is een alert popup!");
+
+    // Confirm popup
+    let confirmResult = confirm("Dit is een confirm popup. Klik op OK of Cancel.");
+    console.log("Return value van confirm: " + confirmResult);
+
+    // Prompt popup
+    let promptResult = prompt("Dit is een prompt popup. Voer iets in en klik op OK of Cancel.");
+    console.log("Return value van prompt: " + promptResult);
+</script>
+<p>Return value van de confirm functie:
+
+    Als de gebruiker op 'OK' klikt, is de return value true.
+    Als de gebruiker op 'Cancel' klikt, is de return value false.
+    Return value van de prompt functie:
+
+    Als de gebruiker een tekst invoert en op 'OK' klikt, is de return value de ingevoerde tekst.
+    Als de gebruiker op 'Cancel' klikt, is de return value null.</p>
+</body>
+</html>
