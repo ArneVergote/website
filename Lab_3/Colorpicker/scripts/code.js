@@ -27,11 +27,4 @@ const setup = () => {
 		document.getElementById('sliderValueB').textContent = ' ' + blue;
 		colorDemos[0].style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
 	}
-
-// dit is de eerste regel code die uitgevoerd wordt,
-// de bovenstaande functie declaraties introduceren
-// enkel de functies en voeren ze niet uit natuurlijk.
-//
-// Onderstaande zorgt ervoor dat de setup functie wordt
-// uitgevoerd zodra de DOM-tree klaar is.
 	window.addEventListener("load", setup);

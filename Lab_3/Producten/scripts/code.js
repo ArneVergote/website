@@ -1,4 +1,4 @@
-function herlaadDOMElementen() {
+function herlaadElementen() {
     // Haal alle cellen op per class
     const prijsCellen = document.getElementsByClassName('prijs');
     const aantalCellen = document.getElementsByClassName('aantal');
@@ -9,7 +9,7 @@ function herlaadDOMElementen() {
 }
 
 function herbereken() {
-    const { prijsCellen, aantalCellen, btwCellen, subtotaalCellen } = herlaadDOMElementen();
+    const { prijsCellen, aantalCellen, btwCellen, subtotaalCellen } = herlaadElementen();
 
     let totaal = 0;
 
