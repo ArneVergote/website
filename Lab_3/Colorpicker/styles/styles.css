@@ -1,20 +1,14 @@
 section {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	justify-content: flex-start;
-	height: 100vh;
 }
 .colorDemo{
-	display: flex;
-	justify-content: end;
 	width: 100px;
 	height: 70px;
 	border: 1px solid black;
 	margin-left: 1em;
 }
 .slider{
-
 	border:1px solid black;
 	border-radius: 5px;
 	margin: 0 0 0 1em;
