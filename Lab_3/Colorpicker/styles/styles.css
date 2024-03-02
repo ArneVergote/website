@@ -6,6 +6,8 @@ section {
 	height: 100vh;
 }
 .colorDemo{
+	display: flex;
+	justify-content: end;
 	width: 100px;
 	height: 70px;
 	border: 1px solid black;
