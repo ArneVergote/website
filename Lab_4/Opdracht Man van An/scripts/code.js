@@ -19,6 +19,6 @@ const setup = () => {
         positie = tekst.lastIndexOf(zoekSequentie, positie - 1);
     }
     document.getElementById("resultLastIndexOf").innerText = "Het aantal keren dat de sequentie 'an' voorkomt (met lastIndexOf): " + teller;
-};
+}
 
 document.addEventListener("DOMContentLoaded", setup);
