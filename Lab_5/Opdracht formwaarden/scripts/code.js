@@ -8,7 +8,15 @@ function toonResultaat() {
     const data = {};
 
     for (const [key, value] of formData.entries()) {
-        data[key] = value;
+        // If the key already exists, consider the value as an array
+        if (key in data) {
+            if (!Array.isArray(data[key])) {
+                data[key] = [data[key]];
+            }
+            data[key].push(value);
+        } else {
+            data[key] = value;
+        }
     }
 
     let result = "";
@@ -30,9 +38,10 @@ function toonResultaat() {
 
     const bestellingen = data['bestelling'];
     result += "Bestelling bestaat uit ";
+
     if (Array.isArray(bestellingen)) {
         if (bestellingen.length > 0) {
-            result += bestellingen.join(", ") + ".";
+            result += bestellingen.join(" ") + ".";
         } else {
             result += "geen bestelling.";
         }
@@ -47,4 +56,3 @@ function toonResultaat() {
 }
 
 window.addEventListener("load", setup);
-
