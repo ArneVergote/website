@@ -51,10 +51,17 @@ const valideerEmail = () => {
     let errEmail = document.getElementById("errEmail");
     let email = txtEmail.value.trim();
 
-    if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+    if (email === "") {
+        reportError(txtEmail, errEmail, "verplicht veld");
+    } else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
         reportError(txtEmail, errEmail, "geen geldig email adres");
     } else {
-        clearError(txtEmail, errEmail);
+        const parts = email.split("@");
+        if (parts.length !== 2 || parts[0].length < 1 || parts[1].length < 1) {
+            reportError(txtEmail, errEmail, "geen geldig email adres");
+        } else {
+            clearError(txtEmail, errEmail);
+        }
     }
 };
 
@@ -63,8 +70,10 @@ const valideerAantalKinderen = () => {
     let errAantalKinderen = document.getElementById("errAantalKinderen");
     let aantalKinderen = txtAantalKinderen.value.trim();
 
-    if (isNaN(aantalKinderen) || aantalKinderen < 0 || aantalKinderen >= 99) {
-        reportError(txtAantalKinderen, errAantalKinderen, "is geen positief getal of is te vruchtbaar");
+    if (isNaN(aantalKinderen) || aantalKinderen < 0) {
+        reportError(txtAantalKinderen, errAantalKinderen, "is geen positief getal");
+    } else if (aantalKinderen >= 99) {
+        reportError(txtAantalKinderen, errAantalKinderen, "is te vruchtbaar");
     } else {
         clearError(txtAantalKinderen, errAantalKinderen);
     }
