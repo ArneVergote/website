@@ -50,9 +50,7 @@ function toonResultaat() {
     } else {
         result += "geen bestelling.";
     }
-
     console.log(result);
-
 }
 
 window.addEventListener("load", setup);
