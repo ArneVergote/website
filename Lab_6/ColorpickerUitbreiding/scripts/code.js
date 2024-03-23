@@ -47,9 +47,7 @@ const saveColor = () => {
 	let removeButton = document.createElement("button");
 	removeButton.className = "removeButton";
 	removeButton.textContent = "X";
-	removeButton.addEventListener("click", () => {
-		colorBox.remove();
-	});
+	removeButton.addEventListener("click", () => {colorBox.remove();});
 
 	colorBox.appendChild(removeButton);
 	savedColors.appendChild(colorBox);
