@@ -37,6 +37,13 @@ const saveColor = () => {
 	colorBox.className = "colorBox";
 	colorBox.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
 
+	colorBox.addEventListener("click", () => {
+		sliders[0].value = red;
+		sliders[1].value = green;
+		sliders[2].value = blue;
+		update();
+	});
+
 	let removeButton = document.createElement("button");
 	removeButton.className = "removeButton";
 	removeButton.textContent = "X";
