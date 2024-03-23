@@ -41,7 +41,14 @@ button {
 	font-size: 18px;
 	color: white;
 }
-.swatchContainer {
+#savedColors {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.colorBox {
 	width: 100px;
-	height: 50px;
+	height: 70px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
