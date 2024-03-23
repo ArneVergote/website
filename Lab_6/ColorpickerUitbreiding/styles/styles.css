@@ -6,6 +6,7 @@ section {
 	width: 100px;
 	height: 70px;
 	border: 1px solid black;
+	border-radius: 5px;
 	margin-left: 1em;
 }
 .slider{
