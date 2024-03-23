@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Demonstratie slider</title>
+	<link rel="stylesheet" href="styles/styles.css"/>
+</head> 
+<body> 
+<section>
+	<div class="slider-row">
+		<p>0</p>
+	<input type="range" class="slider" value="50" min="0" max="255"/>
+	<p>255    Red&nbsp;</p>
+		<span class="slider-text" id="sliderValueR"> 50</span>
+	</div>
+		<div class="slider-row">
+			<p>0</p>
+	<input type="range" class="slider" value="50" min="0" max="255"/>
+			<p>255    Green&nbsp;</p>
+			<span class="slider-text" id="sliderValueG"> 50</span>
+			<div class="colorDemo"></div>
+		</div>
+			<div class="slider-row">
+				<p>0</p>
+	<input type="range" class="slider" value="50" min="0" max="255"/>
+				<p>255    Blue&nbsp;</p>
+				<span class="slider-text" id="sliderValueB"> 50</span>
+				</div>
+	<button id="saveButton">Save</button>
+	<div id="swatchContainer"></div>
+</section>
+<script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
+</body> 
+</html> 
