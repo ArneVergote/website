@@ -1,0 +1,19 @@
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: lightblue;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.flipped img {
+    display: block;
+}
