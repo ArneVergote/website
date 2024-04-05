@@ -1,4 +1,6 @@
 const setup = () => {
+    const startButton = document.getElementById("startButton"); // Selecteer de startknop
+    startButton.addEventListener("click", startGame);
     window.addEventListener("resize", updateSize);
     images(); // Roept de images-functie aan bij het laden van de pagina
     let playField = document.getElementById("playField");
@@ -6,6 +8,7 @@ const setup = () => {
 }
 
 let global = {
+    gameStarted: false,
     IMAGE_COUNT: 5,
     IMAGE_SIZE: 48,
     IMAGE_PATH_PREFIX: "images/",
@@ -16,6 +19,17 @@ let global = {
     intervalId: 0 // Voeg een intervalId toe om de setInterval te volgen
 };
 
+const startGame = () => {
+    if (!gameStarted) { // Controleer of het spel nog niet is gestart
+        gameStarted = true; // Markeer het spel als gestart
+        const startButton = document.getElementById("startButton"); // Selecteer de startknop
+        startButton.style.display = "none"; // Verberg de startknop nadat het spel is gestart
+        window.addEventListener("resize", updateSize);
+        let playField = document.getElementById("playField");
+        playField.addEventListener("click", checkClick);
+        images(); // Roept de images-functie aan nadat het spel is gestart
+    }
+}
 const images = () =>{
     let img = document.getElementById("img"); // Veranderd "img" naar "gameImage"
     let randomIndex = Math.floor(Math.random() * global.IMAGE_COUNT);

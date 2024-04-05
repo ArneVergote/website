@@ -24,7 +24,7 @@ const shuffle = (array) =>{
     }
 }
 
-function createGameBoard() {
+const createGameBoard = () =>{
     shuffle(afbeeldingen); // Schud de kaarten
 
     const gameBoard = document.getElementById("gameBoard");
@@ -50,11 +50,6 @@ function createGameBoard() {
 }
 
 // Functie om een kaart om te draaien
-// Functie om een kaart om te draaien
-// Functie om een kaart om te draaien
-// Functie om een kaart om te draaien
-// Functie om een kaart om te draaien
-// Functie om een kaart om te draaien
 const flipCard = (event) => {
     const card = event.currentTarget;
 
@@ -73,34 +68,29 @@ const flipCard = (event) => {
 }
 
 // Functie om te controleren of de omgedraaide kaarten overeenkomen
-// Functie om te controleren of de omgedraaide kaarten overeenkomen
-// Functie om te controleren of de omgedraaide kaarten overeenkomen
-// Functie om te controleren of de omgedraaide kaarten overeenkomen
-// Functie om te controleren of de omgedraaide kaarten overeenkomen
-// Functie om te controleren of de omgedraaide kaarten overeenkomen
-const checkMatch = () => {
-    const [card1, card2] = omgedraaideKaarten;
+const checkMatch = () =>{
+    const [card1, card2] = flippedCards;
 
-    if (card1.querySelector("img").src === card2.querySelector("img").src) {
+    // Vergelijk de bronnen van de afbeeldingen op de omgedraaide kaarten
+    if (card1.querySelector(".back").src === card2.querySelector(".back").src) {
         // Verwijder de overeenkomende kaarten
-        verwijderdeKaarten.push(card1, card2);
-        omgedraaideKaarten = [];
+        setTimeout(() => {
+            flippedCards.forEach(card => card.style.visibility = "hidden");
+            flippedCards = [];
 
-        if (verwijderdeKaarten.length === global.AANTAL_KAARTEN) {
-            // Einde van het spel
-            setTimeout(() => {
-                alert("Gefeliciteerd! Je hebt alle kaarten gevonden!");
-            }, 500);
-        }
+            // Controleer of er geen kaarten meer over zijn
+            if (document.querySelectorAll('.card:not([style*="visibility: hidden"])').length === 0) {
+                endGame();
+            }
+        }, 1000);
     } else {
         // Kaarten draaien niet overeen, draai ze terug na een korte wachttijd
         setTimeout(() => {
             card1.classList.remove("flipped");
             card2.classList.remove("flipped");
-            omgedraaideKaarten = [];
+            flippedCards = [];
         }, 1000);
     }
 }
-
 
 window.addEventListener("load", setup);
