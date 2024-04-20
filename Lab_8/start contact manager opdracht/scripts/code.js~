@@ -4,7 +4,7 @@ let selectedIndex = -1;
 // Bewaar de wijzigingen die in de user interface werden aangebracht
 
 
-const change = (event) => { // Voeg het event object toe als parameter
+const change = () => {
     selectedIndex = parseInt(event.target.value); // Index van geselecteerde persoon
     if (selectedIndex !== -1) {
         // Toon gegevens van geselecteerde persoon in het formulier
@@ -14,7 +14,8 @@ const change = (event) => { // Voeg het event object toe als parameter
         // Wis gegevens in het formulier als er geen persoon is geselecteerd
         wisFormulier();
     }
-};
+}
+
 // Functie om een persoon weer te geven in het formulier
 const toonPersoonInFormulier = (persoon) => {
     document.getElementById("txtVoornaam").value = persoon.voornaam;
