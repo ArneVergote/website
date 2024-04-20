@@ -52,7 +52,7 @@ const bewaarBewerktePersoon = () => {
         };
 
         if (selectedIndex === -1) {
-            // Nieuwe persoon toevoegen aan de lijst
+            personen.push(persoon);
             addPersonToList(persoon);
         } else {
             // Bestaande persoon bijwerken in de lijst
