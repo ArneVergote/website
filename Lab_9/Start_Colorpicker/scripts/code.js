@@ -27,15 +27,20 @@ const saveSwatch = () => {
 };
 
 const setColorPickerFromSwatch = (event) => {
-    if (event.target.className==="swatch") {
+    if (event.target.className === "swatch") {
         let swatch = event.target;
-        document.getElementById("sldRed").value = rgb.red;
-        document.getElementById("sldGreen").value = rgb.green
-        document.getElementById("sldBlue").value = rgb.blue
 
+        // Lees de opgeslagen RGB-waarden uit de data-attributen van de swatch
+        let red = swatch.getAttribute("data-red");
+        let green = swatch.getAttribute("data-green");
+        let blue = swatch.getAttribute("data-blue");
 
-        // helaas triggeren de .value wijzigingen niet automatisch
-        // een change event ds moeten we handmatig update oproepen
+        // Zet de sliders naar de respectieve waarden
+        document.getElementById("sldRed").value = red;
+        document.getElementById("sldGreen").value = green;
+        document.getElementById("sldBlue").value = blue;
+
+        // Omdat het wijzigen van .value geen events activeert, roepen we handmatig update() aan
         update();
     }
 };
