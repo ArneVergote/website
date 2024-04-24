@@ -27,7 +27,7 @@ const saveSwatch = () => {
 };
 
 const setColorPickerFromSwatch = (event) => {
-    if (event.target.className=="swatch") {
+    if (event.target.className==="swatch") {
         let swatch = event.target;
         document.getElementById("sldRed").value = rgb.red;
         document.getElementById("sldGreen").value = rgb.green
