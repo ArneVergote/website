@@ -1,0 +1,12 @@
+p {
+    font-size: 11px;
+}
+#btnGo {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #00ff23;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 1710px;
+}
