@@ -35,7 +35,27 @@ let handleCommand = () => {
     const query = parts[1];
 
     let url, title;
-
+    switch (prefix) {
+        case 'g':
+            url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            title = "Google";
+            break;
+        case 'y':
+            url = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+            title = "YouTube";
+            break;
+        case 't':
+            url = `https://twitter.com/hashtag/${encodeURIComponent(query)}`;
+            title = "Twitter";
+            break;
+        case 'i':
+            url = `https://www.instagram.com/explore/tags/${encodeURIComponent(query)}`;
+            title = "Instagram";
+            break;
+        default:
+            alert("Fout: Onbekende prefix.");
+            return;
+    }
 
     history.push({
         title: title,
